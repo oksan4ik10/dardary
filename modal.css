@@ -1,0 +1,84 @@
+/*===MODAL=========*/
+.modal {
+    transform: translateX(-100%);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgb(179, 179, 179);
+    background: linear-gradient(90deg, rgba(179, 179, 179, 1) 0%, rgba(34, 34, 36, 1) 100%, rgba(255, 255, 255, 1) 100%);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    transform: translateX(0);
+}
+
+.modal__container {
+    background: var(--color-blue);
+    width: 30%;
+    height: 30%;
+    padding: 20px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    left: 97%;
+    top: -30px;
+    cursor: pointer;
+}
+
+.close:after {
+    color: var(--color-red);
+    font-size: 40px;
+    display: inline-block;
+    content: "\00d7";
+}
+
+
+.modal__title {
+    text-align: center;
+    color: var(--color-red);
+    margin-bottom: 20px;
+}
+
+.modal__form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.modal__form>* {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+.modal__form .btn {
+    align-self: center;
+    width: 50%;
+
+}
+
+@media (max-width: 1000px) {
+    .modal__container {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .modal__container {
+        width: 80%;
+    }
+
+}
