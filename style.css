@@ -587,9 +587,20 @@ h2.title {
 
 }
 
+@media (max-width: 680px) {
+    .card__title {
+        width: 200px;
+    }
+
+}
+
 @media (max-width: 630px) {
     .cards {
         grid-template-columns: 1fr;
+    }
+
+    .card__title {
+        width: 300px;
     }
 
 }
