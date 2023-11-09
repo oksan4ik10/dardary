@@ -21,7 +21,6 @@
 .modal__container {
     background: var(--color-blue);
     width: 30%;
-    height: 30%;
     padding: 20px;
     border-radius: 30px;
     position: relative;
