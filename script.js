@@ -27,6 +27,9 @@ close.addEventListener("click", ()=> {
     message.style.display = "none";
     titleModal.style.display = "block";
     checkbox.checked = false;
+    date.value = "";
+    nameUser.value = "";
+    phone.value = "";
     
 })
 
