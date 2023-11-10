@@ -138,9 +138,6 @@ h2.title {
     gap: 15px;
 }
 
-.header__nav {}
-
-.nav__item {}
 
 .nav__link {
     text-decoration: none;
@@ -484,11 +481,6 @@ h2.title {
 }
 
 /*======SECTION PRICE========*/
-.price {}
-
-.price__container {}
-
-.price__title {}
 
 .price__chapters {
     display: flex;
@@ -510,7 +502,6 @@ h2.title {
 
 }
 
-.price__cards {}
 
 .cards {
     display: grid;
@@ -518,7 +509,6 @@ h2.title {
     grid-gap: 10px;
 }
 
-.cards__item {}
 
 .card {
     display: flex;
@@ -711,9 +701,3 @@ h2.title {
     height: 70px;
     object-fit: contain;
 }
-
-.section-pay-block__img-pay-icon {}
-
-.footer__text {}
-
-.text {}

@@ -14,7 +14,6 @@
 <body>
     <div class="header header">
         <div class="container header__container">
-
             <div class="logo header__logo">
                 <img src="./images/logo.svg" alt="logo">
                 <div class="logo__title">
@@ -209,10 +208,19 @@
         <div class="modal__container">
             <div class="close"></div>
             <h2 class="modal__title">Записаться на услугу</h2>
+            <h3 class="modal__submit">Ваша заявка успешно отправлена!</h3>
             <form class="modal__form">
                 <label>
+                    Имя:
+                    <input type="text" class="modal__name">
+                </label>
+                <label>
+                    Телефон:
+                    <input type="tel" class="modal__phone">
+                </label>
+                <label>
                     Дата:
-                    <input type="date" name="date">
+                    <input type="date" name="date" class="modal__date">
                 </label>
                 <p>
                     Город:
@@ -243,6 +251,12 @@
                         <option value="service8">Массаж спины</option>
                     </select>
                 </p>
+                <label class="checkbox style-c">
+                    <input type="checkbox" />
+                    <div class="checkbox__checkmark"></div>
+                    <div class="checkbox__body">Согласен на обработку персональных данных</div>
+                </label>
+                <div class="modal__error text">Не все поля заполнены корректно</div>
                 <button class="btn btn_dark">Отправить</button>
 
             </form>

@@ -4,16 +4,30 @@ mobileMenu.addEventListener("click", () => {
     header.classList.toggle("active");
 })
 
+header.addEventListener(("click"), (event)=>{
+    const target = event.target;
+    if(target.closest(".nav__item")) {
+        header.classList.remove("active");
+    }
+})
+
+
 //модальное окно
 const btns = document.querySelectorAll(".btn_take");
 const modal = document.querySelector(".modal");
 const close = document.querySelector(".close");
-btns.forEach((item) => item.addEventListener("click", ()=> {
+btns.forEach((item) => item.addEventListener("click", (event)=> {
     event.preventDefault();
     modal.classList.add("active");
 }))
 close.addEventListener("click", ()=> {
     modal.classList.remove("active");
+    error.style.display = "none";
+    form.style.display = "flex";
+    message.style.display = "none";
+    titleModal.style.display = "block";
+    checkbox.checked = false;
+    
 })
 
 //раздел услуги и цены
@@ -138,3 +152,45 @@ chapters.addEventListener("click", ()=> {
      }
 })
 render(list[0]);
+
+
+//валидация поля телефон
+const phone = document.querySelector(".modal__phone");
+
+const phoneMask = (phone) => {
+    const regex = /(\d?)(\d{3})(\d{3})(\d{2})(\d{2})/g;
+    const subst = "+$1 ($2) $3-$4-$5";
+    return phone.replace(regex, subst);
+  }
+  phone.addEventListener("input", (event) => {
+    const target = event.currentTarget;
+    if(target.value.length > 11) {
+        target.value = phoneMask(target.value.slice(0, 11))
+    };
+    target.value = target.value.replace(/\D/gi, "");
+    if(target.value.length === 11){
+        target.value = phoneMask(target.value);
+    }
+
+  })
+
+  //отправка формы
+  const form = document.querySelector(".modal__form");
+  const checkbox  = document.querySelector(".checkbox input");
+  const date = document.querySelector(".modal__date");
+  const nameUser = document.querySelector(".modal__name");
+  const error = document.querySelector(".modal__error");
+  const message = document.querySelector(".modal__submit");
+  const titleModal = document.querySelector(".modal__title");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if((!checkbox.checked) || !(date.value) || !(nameUser.value) || (phone.value.length !== 18)){
+        error.style.display = "flex";
+    } else{
+        form.style.display = "none";
+        message.style.display = "block";
+        titleModal.style.display = "none";
+    }
+  })
